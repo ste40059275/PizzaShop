@@ -10,11 +10,58 @@ using System.Windows.Forms;
 
 namespace PizzaShop
 {
-    public partial class Form1 : Form
+    public partial class frmLogin : Form
     {
-        public Form1()
+        //Varables
+        public static String strName = "";
+        public frmLogin()
         {
             InitializeComponent();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            ClearDetails();
+        }
+
+        public void ClearDetails()
+        {
+            //Local variable to store result
+            DialogResult dr;
+            //accept response
+            dr = MessageBox.Show("Are you sure you want to exit?",
+                "Confirm Exit",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if yes then close program
+            if (dr == DialogResult.No)
+            {
+                Application.Exit();
+
+            }
+
+
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            frmPizza sw = new frmPizza();
+            this.Hide();
+            sw.Show
+        }
+
+        //Procedure to Exit
+        public void Halt()
+        {
+            if (txtUsername.Text == "Admin" && txtPassword.Text == "Pa$$word")
+            {
+                frmPizza sw = new frmPizza();
+                this.Hide();
+                sw.Show();
+            }
+            else
+            {
+                MessageBox.Show()
+            }
         }
     }
 }
