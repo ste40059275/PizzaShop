@@ -46,7 +46,7 @@ namespace PizzaShop
         {
             frmPizza sw = new frmPizza();
             this.Hide();
-            sw.Show
+            sw.Show();
         }
 
         //Procedure to Exit
@@ -60,7 +60,22 @@ namespace PizzaShop
             }
             else
             {
-                MessageBox.Show()
+                MessageBox.Show("Incorrect Details", "Please Re-Enter Details", MessageBoxButtons.YesNo, MessageBoxIcon.Hand);
+            }
+
+        }
+        //code to check the username and password
+        private void btnEnter_Click(object sender, EventArgs e)
+        {
+            //local variable to store result
+            DialogResult dr;
+            //accept response
+            dr = MessageBox.Show("Are you sure you want to exit?", "Confirm Exit",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+            //if yes then close program
+            if (dr == DiaologResult.Yes)
+            {
+                Application.Exit();
             }
         }
     }
